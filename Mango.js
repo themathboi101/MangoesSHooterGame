@@ -6,10 +6,10 @@ class Mango {
         friction:1,
         density:1.2,
     }
-    var yeet=this.x;
-    var bruh=this.y;
-    var radius=this.r;
-    this.body = Bodies.circles(yeet,bruh,radius,options);
+    this.x=x;
+    this.y=y;
+    this.r=radius;
+    this.body = Bodies.circles(this.x,this.y,this.r,options);
     
     this.image=loadImage("Plucking Mangoes/mango.png");
     World.add(world, this.body);
@@ -25,6 +25,7 @@ class Mango {
     fill("green");
   rotate(this.body.angle);
     imageMode(CENTER);
+    ellipseMode(CENTER);
     image(this.image,0,0,diamter,diameter);
     pop()
   }
