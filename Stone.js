@@ -8,7 +8,7 @@ class Stone {
       }
       this.x=x;
       this.y=y;
-      this.radius=r;
+      this.r=radius;
       this.body = Bodies.circles(this.x,this.y,this.radius,options);
       
       this.image=loadImage("Plucking Mangoes/stone.png");
@@ -20,7 +20,7 @@ class Stone {
 
     push();
       
-      translate(pos.x,pos.y);
+     
       ellipseMode(RADIUS);
       fill("green");
 
