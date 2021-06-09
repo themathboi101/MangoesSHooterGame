@@ -68,20 +68,30 @@ image(boyIMG,200,600,45,45);
  
  
 }
-function keyPressed(){
-if(keyCode===32){
-		Matter.body.setPosition(stone1.body,{x:235,y:420});
-		launcherObject.attach(stone1.body);
-	}
+
+function mouseDragged()
+{
+Matter.Body.setPosition(stone1.body, {x:mouseX, y:mouseY}) 
 }
-function detectCollision(rock,fruit){
-      var mangoPos=fruit.body.position;
-	  var stonePos=rock.body.position;
+
+function mouseReleased()
+{
+launcherObject.fly();
+ }
+
+function keyPressed() {
+if (keyCode === 32) {
+ Matter.Body.setPosition(stone1.body, {x:200, y:400}) 
+ launcherObject.attach(stone1.body);
+	}
+  }
+function detectCollision(stone,mango){
+      var mangoPos=stone.body.position;
+	  var stonePos=mango.body.position;
 
 	  //pythagorean theroem
-      var distance=Math.sqrt((fruit.x-rock.x)^2+(fruit.y-rock.y)^2);
+      var distance=(stonePos.x, stonePos.y, mangoPos.x, mangoPos.y);	  
 	  
-	  //this is because if the collision will have externally tangent bodies or intersecting bodies 
 	  if(distance<=50+30){
 		  Matter.Body.setStatic(fruit.body,false)  
 		}
