@@ -7,6 +7,8 @@ const Body = Matter.Body;
 var boy,boyIMG;
 var stone1;
 var mango1,mango2,mango3,mango4,mango5;
+var tree1;
+var launcherObject;
 
 
 
