@@ -89,10 +89,10 @@ function detectCollision(stone,mango){
       var mangoPos=stone.body.position;
 	  var stonePos=mango.body.position;
 
-	  //pythagorean theroem
-      var distance=(stonePos.x, stonePos.y, mangoPos.x, mangoPos.y);	  
 	  
-	  if(distance<=50+30){
+      var distance=dist(stonePos.x, stonePos.y, mangoPos.x, mangoPos.y);	  
+	  
+	  if(distance<=stone.r+mango.r){
 		  Matter.Body.setStatic(fruit.body,false)  
 		}
 }
